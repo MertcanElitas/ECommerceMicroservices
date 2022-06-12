@@ -1,0 +1,47 @@
+MongoDB
+
+-) Dataları bson(binary json) formatında depolar ancak kullnıcılar bunlara json formatında ulaşır. Buda daha hızlanmasına sebep olur.
+-) Bson verilerin encode edilmiş halidir.
+-) MongoDB, verileri hem dahili olarak hem de ağ üzerinden BSON biçiminde depolar, ancak bu, MongoDB'yi bir JSON veritabanı olarak düşünemeyeceğiniz anlamına gelmez. 
+   JSON'da temsil edebileceğiniz her şey yerel olarak MongoDB'de saklanabilir ve JSON'da olduğu kadar kolay bir şekilde alınabilir.
+-) Yapılan incelemelere göre couchbase ve cassandra'dan daha performanslı olduğu tespit edilmiştir.
+-) Document based olarak çalıştığı için oldukça esnektir. Farklı tip verileri üzerinde depolayabilir.
+-) Transaction management DESTEKLER.
+-) Horizontal(yatay) - veritical(dikey) büyümeyi destekler.
+-) 
+-) Database = Database
+   Table    = Collection
+   Row      = Document
+   Column   = Field
+   Index    = Index
+
+-) Dikey büyüme: Sunucu özelliklerini arttırma. Burada elimizde bulunan mevcut sunucunun özellikleri(CPU, Memory, Disk vb.) arttırılır. 
+Bu bi açıdan her konuda çok maliyetli olabilir ve bir sunucunun özelliklerinini ne kadar arttırabilirsiniz ki ? 
+Eğer küçük veriler üzerinden çalışıyorsanız belki orta ölçekli bir sunucu işinizi görebilir fakat çok büyük verilere sahip sistemler 
+düşünüldüğünde dikey büyüme aşırı bir uğraş ve maliyet gerektirebilir
+
+-) Yatay büyüme: Sunucu arttırma. Bu işlemde ise mevcut sunucunuz üzerinde herhangi bir değişiklik ve özellik arttırımı yapmakla uğraşmadan aynı 
+özelliklerde ya da ihtiyaç doğrultusunda farklı özelliklerde bir sunucuyu daha sunucunuza bağlayarak ihtiyacınızı giderebilirsiniz.
+
+-) BSON FORMAT
+
+ {"hello": "world"}
+→	
+
+  \x16\x00\x00\x00                   // total document size
+  \x02                               // 0x02 = type String
+  hello\x00                          // field name
+  \x06\x00\x00\x00world\x00          // field value
+  \x00                               // 0x00 = type EOO ('end of object')
+
+ {"BSON": ["awesome", 5.05, 1986]}
+→	
+  \x31\x00\x00\x00
+  \x04BSON\x00
+  \x26\x00\x00\x00
+  \x02\x30\x00\x08\x00\x00\x00awesome\x00
+  \x01\x31\x00\x33\x33\x33\x33\x33\x33\x14\x40
+  \x10\x32\x00\xc2\x07\x00\x00
+  \x00
+  \x00
+

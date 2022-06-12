@@ -3,6 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B9C4E30F-4BE5-4B8F-8D61-2B1375D8910A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{9D64295D-DFC7-4DE6-9B70-F0A70AB343E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{F8129650-F480-4B17-BFD1-4B6276B6D07A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{FDF85098-E766-4305-BF6B-F3FAE0C6E6BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Services\Basket.API\Basket.API.csproj", "{97B45522-0CAF-4D7E-8549-0B890A921941}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -10,5 +20,21 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8129650-F480-4B17-BFD1-4B6276B6D07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8129650-F480-4B17-BFD1-4B6276B6D07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8129650-F480-4B17-BFD1-4B6276B6D07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8129650-F480-4B17-BFD1-4B6276B6D07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B45522-0CAF-4D7E-8549-0B890A921941}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B45522-0CAF-4D7E-8549-0B890A921941}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B45522-0CAF-4D7E-8549-0B890A921941}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B45522-0CAF-4D7E-8549-0B890A921941}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D64295D-DFC7-4DE6-9B70-F0A70AB343E6} = {B9C4E30F-4BE5-4B8F-8D61-2B1375D8910A}
+		{F8129650-F480-4B17-BFD1-4B6276B6D07A} = {9D64295D-DFC7-4DE6-9B70-F0A70AB343E6}
+		{FDF85098-E766-4305-BF6B-F3FAE0C6E6BB} = {B9C4E30F-4BE5-4B8F-8D61-2B1375D8910A}
+		{97B45522-0CAF-4D7E-8549-0B890A921941} = {FDF85098-E766-4305-BF6B-F3FAE0C6E6BB}
 	EndGlobalSection
 EndGlobal
